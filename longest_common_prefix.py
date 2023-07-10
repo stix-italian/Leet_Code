@@ -13,8 +13,11 @@ def longestCommonPrefix(strs: List[str]) -> str:
                         longest = x
                     else:
                         break
-            if longest < overall:
+            if longest < overall and overall > 0:
                     overall = longest
+            elif overall == 0 and longest > 0:
+                 overall = longest
+        
         return strs[:overall]
 
 
