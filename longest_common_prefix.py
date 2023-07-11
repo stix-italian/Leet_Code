@@ -2,24 +2,33 @@ from typing import List
 
 
 def longestCommonPrefix(strs: List[str]) -> str:
-        longest = 0
-        overall = 0
+    overall = -1
+    if len(strs) == 1:
+            overall = len(strs[0])
+    else:
         for x in range(0,len(strs)-1):
+            longest = 0
             if strs[x] == strs[x+1]:
-                longest= x
+                longest= len(strs[x])
             else:
-                for y in range (0,len(x)):
-                    if strs[x][y] == str[x+1][y]:
-                        longest = x
+                shortest = len(strs[x])
+                if len(strs[x+1]) < shortest:
+                    shortest = len(strs[x+1])
+                for y in range (0,shortest):
+                    if strs[x][y] == strs[x+1][y]:
+                        longest += 1
                     else:
                         break
-            if longest < overall and overall > 0:
+            if longest < overall and overall > -1:
                     overall = longest
-            elif overall == 0 and longest > 0:
-                 overall = longest
-        
-        return strs[:overall]
+            elif overall == -1:
+                overall = longest
+    if overall == -1:
+        overall = 0
+    return strs[0][:overall]
 
 
-timmy=['flower','flower']
-print(longestCommonPrefix(timmy))
+print(longestCommonPrefix(['fl','flower','flower']))
+print(longestCommonPrefix(['a']))
+print(longestCommonPrefix(["dog","racecar","car"]))
+print(longestCommonPrefix(["reflower","flow","flight"]))
