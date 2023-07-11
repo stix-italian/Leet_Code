@@ -32,3 +32,35 @@ print(longestCommonPrefix(['fl','flower','flower']))
 print(longestCommonPrefix(['a']))
 print(longestCommonPrefix(["dog","racecar","car"]))
 print(longestCommonPrefix(["reflower","flow","flight"]))
+
+# Answer from Leet Code Submissions that I liked:
+#  Key things that were done:
+#  1 return the empty lists or lists of length 1 right at the start
+#  2 sort your list. 
+#  3 with a sorted list you only have to compare the shortest and longest word. Everything must be the same so the middle words don't matter!
+    # a= strs
+    # size = len(a)
+
+    # # if size is 0, return empty string
+    # if (size == 0):
+    #     return ""
+
+    # if (size == 1):
+    #     return a[0]
+
+    # # sort the array of strings
+    # a.sort()
+
+    # # find the minimum length from
+    # # first and last string
+    # end = min(len(a[0]), len(a[size - 1]))    could also do len(a[-1]) for the last element in a list
+
+    # # find the common prefix between
+    # # the first and last string
+    # i = 0
+    # while (i < end and
+    #     a[0][i] == a[size - 1][i]):
+    #     i += 1
+
+    # pre = a[0][0: i]
+    # return pre
