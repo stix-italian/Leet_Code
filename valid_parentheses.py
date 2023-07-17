@@ -55,8 +55,8 @@ isValid("{()}")
 #                     return False
 #         return not stack
 
-# I was on the right track with my old code adding a check list. Just needed to add characters not position numbers and 
-# needed to check what the last opening operation added to the list was (-1) and then remove it if it's correct. Keeping
+# I was on the right track with my old code adding a check list. Just needed to add opening characters not position numbers and 
+# needed to check what the last opening operation added to the list (-1) and then remove it if it's correct. Keeping
 # the order of operations correct.
 
 
