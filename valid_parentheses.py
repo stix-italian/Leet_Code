@@ -37,6 +37,30 @@ isValid('()')
 isValid("([)]")
 isValid("{()}")
 
+# I was close just didn't quite think about it enough. Here is a solution off the internet:
+# stack = []
+#         for char in s:
+#             if char == '(' or char == '{' or char == '[':
+#                 stack.append(char)
+#             else:
+#                 if not stack:
+#                     return False
+#                 if char == ')' and stack[-1] == '(':
+#                     stack.pop()
+#                 elif char == '}' and stack[-1] == '{':
+#                     stack.pop()
+#                 elif char == ']' and stack[-1] == '[':
+#                     stack.pop()
+#                 else:
+#                     return False
+#         return not stack
+
+# I was on the right track with my old code adding a check list. Just needed to add characters not position numbers and 
+# needed to check what the last opening operation added to the list was (-1) and then remove it if it's correct. Keeping
+# the order of operations correct.
+
+
+
 
 # Old Code
 
