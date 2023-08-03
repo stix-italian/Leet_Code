@@ -31,13 +31,18 @@ class Solution:
                 if s[x] == s[y] and x != y:
                     if swap(s,x,y) == goal:
                         return True
+                    else:
+                        return False
         for x in range(0,len(s)):
             for y in range(0,len(goal)):
                 if s[x] == goal[y] and x != y:
                     if swap(s,x,y) == goal:
-                        return True      
+                        return True
+                    else:
+                        return False      
         
         return False
 
            
     print(buddyStrings('ab','ba'))
+    print(buddyStrings('aaaaaaabc','aaaaaaacb'))
